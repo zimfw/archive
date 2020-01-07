@@ -23,7 +23,7 @@ case "${1}" in
   (*.zip) zip -r "${@}" ;;
   (*.rar) rar a "${@}" ;;
   (*.7z) 7za a "${@}" ;;
-  (*.zst) zstd -c -T0 "${@}" -o "${1}" ;;
+  (*.zst) zstd -c -T0 "${@:2}" -o "${1}" ;;
   (*.gz) print "${0}: .gz is only useful for single files, and does not capture permissions. Use .tar.gz" ;;
   (*.bz|*.bz2) print "${0}: .bzip2 is only useful for single files, and does not capture permissions. Use .tar.bz2" ;;
   (*.xz) print "${0}: .xz is only useful for single files, and does not capture permissions. Use .tar.xz" ;;
