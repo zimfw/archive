@@ -29,3 +29,4 @@ Archive formats
 | .zip | `unzip` |
 | .rar | `unrar` or `rar` |
 | .7z | `7za` |
+| .zst | `zstd` |
