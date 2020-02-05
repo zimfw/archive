@@ -2,16 +2,16 @@
 # Archive aliases
 #
 
-# if pigz/pbzip2 are available, alias them as they are drop-in replacements for gzip and bzip2, respectively.
-
-#
-# pigz
-#
-(( ${+commands[pigz]} )) && alias gzip='pigz'
-(( ${+commands[unpigz]} )) && alias gunzip='unpigz'
+# If pbzip2/pigz are available, alias them as they are drop-in replacements for bzip2/gzip, respectively.
 
 #
 # pbzip2
 #
-(( ${+commands[pbzip2]} )) && alias bzip2='pbzip2'
-(( ${+commands[pbunzip2]} )) && alias bunzip2='pbunzip2'
+if (( ${+commands[pbzip2]} )) alias bzip2='pbzip2'
+if (( ${+commands[pbunzip2]} )) alias bunzip2='pbunzip2'
+
+#
+# pigz
+#
+if (( ${+commands[pigz]} )) alias gzip='pigz'
+if (( ${+commands[unpigz]} )) alias gunzip='unpigz'
