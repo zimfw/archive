@@ -3,7 +3,7 @@ archive
 
 Provides `archive` and `unarchive` functions for easy archive manipulation.
 
-This module will make use of `pigz` and `pbzip2` if available to make use of all available CPU cores.
+This module will make use of `pbzip2` and `pigz` if available to make use of all available CPU cores.
 
 Functions
 ---------
@@ -16,17 +16,17 @@ Archive formats
 
 | Format | Requirements |
 | ------ | ------------ |
-| .tar | `tar` |
-| .tar.gz, .tgz | `tar` or `pigz` |
-| .tar.bz, .tar.bz2, .tbz, .tbz2 | `tar` or `pbzip2` |
-| .tar.xz, .txz | `tar` with xz support |
-| .tar.zma, .tlz | `tar` with lzma support |
-| .gz | `gunzip` or `pigz` |
-| .bz, .bz2 | `bunzip2` or `pbzip2` |
-| .xz | `unxz` |
-| .lzma | `unzlma` |
-| .Z | `uncompress` |
-| .zip | `unzip` |
+| .7z, .001 | `7za` |
 | .rar | `unrar` or `rar` |
-| .7z | `7za` |
+| .tar.bz, .tar.bz2, .tbz, .tbz2 | `tar` or `pbzip2` |
+| .tar.gz, .tgz | `tar` or `pigz` |
+| .tar.lzma, .tlz | `tar` with lzma support |
+| .tar.xz, .txz | `tar` with xz support |
+| .tar | `tar` |
+| .zip | `unzip` |
 | .zst | `zstd` |
+| .bz, .bz2 | `bunzip2` or `pbzip2` |
+| .gz | `gunzip` or `pigz` |
+| .lzma | `unzlma` |
+| .xz | `unxz` |
+| .Z | `uncompress` |
