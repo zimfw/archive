@@ -17,16 +17,16 @@ Archive formats
 | Format | Requirements |
 | ------ | ------------ |
 | .7z, .001 | `7za` |
-| .rar | `unrar` or `rar` |
-| .tar.bz, .tar.bz2, .tbz, .tbz2 | `tar` or `pbzip2` |
-| .tar.gz, .tgz | `tar` or `pigz` |
-| .tar.lzma, .tlz | `tar` with lzma support |
-| .tar.xz, .txz | `tar` with xz support |
+| .rar | `rar` or `unrar` |
+| .tar.bz, .tar.bz2, .tbz, .tbz2 | `tar` |
+| .tar.gz, .tgz | `tar` |
+| .tar.lzma, .tlz | `tar` with lzma support or with `lzcat` |
+| .tar.xz, .txz | `tar` with xz support or with `xzcat` |
 | .tar | `tar` |
-| .zip | `unzip` |
+| .zip | `zip` and `unzip` |
 | .zst | `zstd` |
-| .bz, .bz2 | `bunzip2` or `pbzip2` |
-| .gz | `gunzip` or `pigz` |
+| .bz, .bz2 | `pbunzip2` or `bunzip2` |
+| .gz | `unpigz` or `gunzip` |
 | .lzma | `unzlma` |
 | .xz | `unxz` |
 | .Z | `uncompress` |
