@@ -5,7 +5,7 @@
 
 if (( # < 2 )); then
   print -u2 "usage: ${0} <archive_name.ext> <file>..."
-  return 1
+  return 2
 fi
 
 # we are quitting (above) if there are less than 2 vars,
@@ -24,10 +24,10 @@ case "${1}" in
   (*.tar) tar -cvf "${@}" ;;
   (*.zip) zip -r "${@}" ;;
   (*.zst) zstd -c -T0 "${@:2}" -o "${1}" ;;
-  (*.bz|*.bz2) print "${0}: .bzip2 is only useful for single files, and does not capture permissions. Use .tar.bz2" ;;
-  (*.gz) print "${0}: .gz is only useful for single files, and does not capture permissions. Use .tar.gz" ;;
-  (*.lzma) print "${0}: .lzma is only useful for single files, and does not capture permissions. Use .tar.lzma" ;;
-  (*.xz) print "${0}: .xz is only useful for single files, and does not capture permissions. Use .tar.xz" ;;
-  (*.Z) print "${0}: .Z is only useful for single files, and does not capture permissions." ;;
-  (*) print "${0}: unknown archive type: ${1}" ;;
+  (*.bz|*.bz2) print -u2 "${0}: .bzip2 is only useful for single files, and does not capture permissions. Use .tar.bz2" ;;
+  (*.gz) print -u2 "${0}: .gz is only useful for single files, and does not capture permissions. Use .tar.gz" ;;
+  (*.lzma) print -u2 "${0}: .lzma is only useful for single files, and does not capture permissions. Use .tar.lzma" ;;
+  (*.xz) print -u2 "${0}: .xz is only useful for single files, and does not capture permissions. Use .tar.xz" ;;
+  (*.Z) print -u2 "${0}: .Z is only useful for single files, and does not capture permissions." ;;
+  (*) print -u2 "${0}: unknown archive type: ${1}" ;;
 esac

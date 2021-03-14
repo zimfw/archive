@@ -5,7 +5,7 @@
 
 if (( # < 1 )); then
   print -u2 "usage: ${0} <archive_name.ext>..."
-  return 1
+  return 2
 fi
 
 setopt LOCAL_OPTIONS ERR_RETURN
@@ -31,10 +31,7 @@ while (( # > 0 )); do
     (*.lzma) unlzma -T0 "${1}" ;;
     (*.xz) unxz -T0 "${1}" ;;
     (*.Z) uncompress "${1}" ;;
-    (*)
-      print "${0}: unknown archive type: ${1}"
-      return 1
-      ;;
+    (*) print -u2 "${0}: unknown archive type: ${1}" ;;
   esac
   shift
 done
