@@ -15,3 +15,8 @@ if (( ${+commands[pbunzip2]} )) alias bunzip2='pbunzip2'
 #
 if (( ${+commands[pigz]} )) alias gzip='pigz'
 if (( ${+commands[unpigz]} )) alias gunzip='unpigz'
+
+#
+# Suffix alias
+#
+alias -s {7z,001,rar,bz,bz2,tbz,tbz2,gz,tgz,lzma,tlz,xz,txz,tar,zip,zst,Z}=unarchive

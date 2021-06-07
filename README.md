@@ -3,6 +3,8 @@ archive
 
 Provides `archive` and `unarchive` functions for easy archive manipulation.
 
+Suffix aliases are also provided, so archives can be directly unarchived.
+
 This module will make use of `pbzip2` and `pigz` if available to make use of all available CPU cores.
 
 Functions
