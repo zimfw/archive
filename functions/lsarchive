@@ -1,0 +1,31 @@
+# vim:et sts=2 sw=2 ft=zsh
+#
+# Lists files in archives
+#
+
+if (( # < 1 )); then
+  print -u2 "usage: ${0} <archive_name.ext>..."
+  return 2
+fi
+
+setopt LOCAL_OPTIONS ERR_RETURN
+
+while (( # > 0 )); do
+  case "${1}" in
+    (*.7z|*.001) 7za l "${1}" ;;
+    (*.rar) (( ${+commands[unrar]} )) && unrar l "${1}" || rar l "${1}" ;;
+    (*.tar.bz|*.tar.bz2|*.tbz|*.tbz2) tar -tvjf "${1}" ;;
+    (*.tar.gz|*.tgz) tar -tvzf "${1}" ;;
+    (*.tar.lzma|*.tlz) tar --lzma --help &>/dev/null && env XZ_OPT=-T0 tar --lzma -tvf "${1}" \
+      || lzcat "${1}" | tar -tvf - ;;
+    (*.tar.xz|*.txz) tar -J --help &>/dev/null && env XZ_OPT=-T0 tar -tvJf "${1}" \
+      || xzcat "${1}" | tar -tvf - ;;
+    (*.tar) tar -tvf "${1}" ;;
+    (*.zip) unzip -l "${1}" ;;
+    (*.zst) zstd -T0 -l "${1}" ;;
+    (*.gz) gunzip -l "${1}" ;;
+    (*.xz) unxz -T0 -l "${1}" ;;
+    (*) print -u2 "${0}: unknown archive type: ${1}" ;;
+  esac
+  shift
+done

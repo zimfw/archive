@@ -20,10 +20,10 @@ while (( # > 0 )); do
     (*.tar.bz|*.tar.bz2|*.tbz|*.tbz2) tar -xvjf "${1}" ;;
     (*.tar.gz|*.tgz) tar -xvzf "${1}" ;;
     (*.tar.lzma|*.tlz) tar --lzma --help &>/dev/null && env XZ_OPT=-T0 tar --lzma -xvf "${1}" \
-      || lzcat "${1}" | tar xvf - ;;
+      || lzcat "${1}" | tar -xvf - ;;
     (*.tar.xz|*.txz) tar -J --help &>/dev/null && env XZ_OPT=-T0 tar -xvJf "${1}" \
-      || xzcat "${1}" | tar xvf - ;;
-    (*.tar) tar xvf "${1}" ;;
+      || xzcat "${1}" | tar -xvf - ;;
+    (*.tar) tar -xvf "${1}" ;;
     (*.zip) unzip "${1}";;
     (*.zst) zstd -T0 -d "${1}" ;;
     (*.bz|*.bz2) bunzip2 "${1}" ;;

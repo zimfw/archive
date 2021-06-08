@@ -1,17 +1,18 @@
 archive
 =======
 
-Provides `archive` and `unarchive` functions for easy archive manipulation.
+Provides `archive`, `unarchive` and `lsarchive` functions for easy archive manipulation.
 
-Suffix aliases are also provided, so archives can be directly unarchived.
+Suffix aliases are also provided, so files can be directly unarchived.
 
 This module will make use of `pbzip2` and `pigz` if available to make use of all available CPU cores.
 
 Functions
 ---------
 
-  * `archive` generates an archive based on file extension. Syntax is `archive myarchive.tar.gz /path/to/archive`
-  * `unarchive` unarchives files based on the extensions. Syntax is `unarchive myarchive.7z`
+  * `archive` generates an archive based on file extension. Syntax is `archive myarchive.tar.gz /path/to/be/archived`
+  * `unarchive` unarchives files based on the extensions. Syntax is `unarchive myarchive.tar.gz`
+  * `lsarchive` lists archives contents based on the extensions. Syntax is `lsarchive myarchive.tar.gz`
 
 Archive formats
 ---------------
