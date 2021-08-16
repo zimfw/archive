@@ -11,14 +11,11 @@ fi
 # we are quitting (above) if there are less than 2 vars,
 # so we don't need any argc check here.
 
-# pigz and pbzip2 are aliased in the init.zsh file. This provides a significant speedup, resulting in a
-# near-liner decrease in compression time based on on the number of available cores.
-
 case "${1}" in
   (*.7z) 7za a "${@}" ;;
   (*.rar) rar a "${@}" ;;
-  (*.tar.bz|*.tar.bz2|*.tbz|*.tbz2) tar -cvjf "${@}" ;;
-  (*.tar.gz|*.tgz) tar -cvzf "${@}" ;;
+  (*.tar.bz|*.tar.bz2|*.tbz|*.tbz2) tar --use-compress-program=${${(k)commands[pbzip2]}:-bzip2} -cvf "${@}" ;;
+  (*.tar.gz|*.tgz) tar --use-compress-program=${${(k)commands[pigz]}:-gzip} -cvf "${@}" ;;
   (*.tar.lzma|*.tlz) tar --lzma --help &>/dev/null && env XZ_OPT=-T0 tar --lzma -cvf "${@}" ;;
   (*.tar.xz|*.txz) tar -J --help &>/dev/null && env XZ_OPT=-T0 tar -cvJf "${@}" ;;
   (*.tar) tar -cvf "${@}" ;;
