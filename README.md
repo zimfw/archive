@@ -25,9 +25,9 @@ Archive formats
 | .tar.gz, .tgz | `tar` |
 | .tar.lzma, .tlz | `tar` with lzma support or with `lzcat` |
 | .tar.xz, .txz | `tar` with xz support or with `xzcat` |
+| .tar.zst, .zst | `zstd` |
 | .tar | `tar` |
 | .zip | `zip` and `unzip` |
-| .zst | `zstd` |
 | .bz, .bz2 | `pbunzip2` or `bunzip2` |
 | .gz | `unpigz` or `gunzip` |
 | .lzma | `unzlma` |

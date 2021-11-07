@@ -7,14 +7,14 @@
 #
 # pbzip2
 #
-if (( ${+commands[pbzip2]} )) alias bzip2='pbzip2'
-if (( ${+commands[pbunzip2]} )) alias bunzip2='pbunzip2'
+if (( ${+commands[pbzip2]} )) alias bzip2=pbzip2
+if (( ${+commands[pbunzip2]} )) alias bunzip2=pbunzip2
 
 #
 # pigz
 #
-if (( ${+commands[pigz]} )) alias gzip='pigz'
-if (( ${+commands[unpigz]} )) alias gunzip='unpigz'
+if (( ${+commands[pigz]} )) alias gzip=pigz
+if (( ${+commands[unpigz]} )) alias gunzip=unpigz
 
 #
 # Suffix alias
