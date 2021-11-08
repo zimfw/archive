@@ -20,16 +20,17 @@ Archive formats
 | Format | Requirements |
 | ------ | ------------ |
 | .7z, .001 | `7za` |
-| .rar | `rar` or `unrar` |
+| .rar | `unrar` or `rar` |
 | .tar.bz, .tar.bz2, .tbz, .tbz2 | `tar` |
 | .tar.gz, .tgz | `tar` |
 | .tar.lzma, .tlz | `tar` with lzma support or with `lzcat` |
 | .tar.xz, .txz | `tar` with xz support or with `xzcat` |
-| .tar.zst, .zst | `zstd` |
+| .tar.zst, .zst | `tar` with `unzstd` |
 | .tar | `tar` |
-| .zip | `zip` and `unzip` |
+| .zip | `unzip` |
 | .bz, .bz2 | `pbunzip2` or `bunzip2` |
 | .gz | `unpigz` or `gunzip` |
 | .lzma | `unzlma` |
 | .xz | `unxz` |
+| .zst | `zstd` |
 | .Z | `uncompress` |
