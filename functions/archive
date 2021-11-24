@@ -18,7 +18,7 @@ case ${1} in
   (*.tar.gz|*.tgz) tar --use-compress-program=${${(k)commands[pigz]}:-gzip} -cvf "${@}" ;;
   (*.tar.lzma|*.tlz) tar --lzma --help &>/dev/null && XZ_OPT=-T0 tar --lzma -cvf "${@}" ;;
   (*.tar.xz|*.txz) tar -J --help &>/dev/null && XZ_OPT=-T0 tar -cvJf "${@}" ;;
-  (*.tar.zst) XZ_OPT=-T0 tar --use-compress-program=zstd -cvf "${@}" ;;
+  (*.tar.zst|*.tzst) XZ_OPT=-T0 tar --use-compress-program=zstd -cvf "${@}" ;;
   (*.tar) tar -cvf "${@}" ;;
   (*.zip) zip -r "${@}" ;;
   (*.bz|*.bz2) print -u2 "${0}: .bzip2 is only useful for single files, and does not capture permissions. Use .tar.bz2" ;;

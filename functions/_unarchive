@@ -1,4 +1,4 @@
 #compdef unarchive lsarchive
 
 _arguments \
-  "*:archive:_files -g '(#i)*.(7z|001|rar|bz|bz2|tbz|tbz2|gz|tgz|lzma|tlz|xz|txz|tar|zip|zst|Z)(-.)'"
+  "*:archive:_files -g '(#i)*.(7z|001|rar|bz|bz2|tbz|tbz2|gz|tgz|lzma|tlz|xz|txz|tar|zip|zst|tzst|Z)(-.)'"

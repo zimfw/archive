@@ -22,7 +22,7 @@ while (( # > 0 )); do
       || lzcat ${1} | tar -xvf - ;;
     (*.tar.xz|*.txz) tar -J --help &>/dev/null && XZ_OPT=-T0 tar -xvJf ${1} \
       || xzcat ${1} | tar -xvf - ;;
-    (*.tar.zst) XZ_OPT=-T0 tar --use-compress-program=unzstd -xvf ${1} ;;
+    (*.tar.zst|*.tzst) XZ_OPT=-T0 tar --use-compress-program=unzstd -xvf ${1} ;;
     (*.tar) tar -xvf ${1} ;;
     (*.zip) unzip ${1};;
     (*.bz|*.bz2) bunzip2 ${1} ;;
