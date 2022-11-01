@@ -2,13 +2,12 @@
 #
 # Unarchives files
 #
+builtin emulate -L zsh -o ERR_RETURN
 
 if (( # < 1 )); then
   print -u2 "usage: ${0} <archive_name.ext>..."
   return 2
 fi
-
-setopt LOCAL_OPTIONS ERR_RETURN
 
 # using pbunzip2/unpigz provides little to decompression time; the benefit is mainly in compression time.
 

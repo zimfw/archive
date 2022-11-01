@@ -2,6 +2,7 @@
 #
 # Creates archive files
 #
+builtin emulate -L zsh
 
 if (( # < 2 )); then
   print -u2 "usage: ${0} <archive_name.ext> <file>..."
