@@ -7,9 +7,9 @@ manipulation based on file extensions.
 [Don't remember the complete tar command to compress, uncompress or list the
 contents of an archive?](https://xkcd.com/1168/) Use `archive myarchive.tar.gz
 /path/to/be/archived` to compress, `unarchive myarchive.tar.gz` to uncompress or
-`lsarchive myarchive.tar.gz` to list, and the respective functions will take
-care of the underlying command for you. It also works with the other archive
-extensions listed below.
+`lsarchive myarchive.tar.gz` to list, for example, and the respective functions
+will take care of the underlying command for you. They also work with the other
+archive extensions listed below.
 
 Suffix aliases are also provided so files can be directly uncompressed.
 
@@ -27,8 +27,8 @@ Functions
 Archive extensions
 ------------------
 
-| Extensions | Requirements
-| ---------- | ------------
+| Extensions | Required commands
+| ---------- | -----------------
 | .7z, .001 | `7za`
 | .rar | `unrar` or `rar`
 | .tar.bz, .tar.bz2, .tbz, .tbz2 | `tar`
